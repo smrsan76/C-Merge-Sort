@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+// #include <string.h>
 #include <math.h>
 
 typedef u_int8_t byte;
@@ -9,6 +9,7 @@ void swap_int(int *a, int *b);
 void allocateArray_int(int **arrPtr, byte arrLen);
 void getArrElemVals(int **arrPtr, int len);
 void copyValue_int(int **dest, int **org, byte from, byte to);
+// void appendValue_int(int **dest, int *org, byte orgLen);
 void bubbleSort(int **arrPtr, byte arrLen);
 void mergeSort(int **arrPtr, byte arrLen);
 void printArrElems(int *arr, byte arrLen);
@@ -87,12 +88,12 @@ void copyValue_int(int **dest, int **org, byte from, byte to){
 }
 
 /*/ Append Arr /*/
-void appendValue_int(int **dest, int *org, byte orgLen){
+/*void appendValue_int(int **dest, int *org, byte orgLen){
 
     memcpy(*dest, org, orgLen * sizeof(int));
     return;
 
-}
+}*/
 
 /*/ Sort Array Using Bubble Sort Algorithm /*///e.g. {12, 6, 9, 11, 7, 10, 2, 5, 3, 1, 4, 8}
 void bubbleSort(int **arrPtr, byte arrLen) {
@@ -219,7 +220,7 @@ void mergeSort(int **arrPtr, byte arrLen){
 
     subArrayIsReady:
 
-    // Append The Sorted Sub Array to The Main Array (( if it has any element ))
+    // Insert The Sorted Sub Array to The Main Array (( if it has any element ))
     if (subArrLen > 0) {
 
         register byte l = 0; // The Sub Array Index
